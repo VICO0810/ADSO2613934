@@ -1,14 +1,13 @@
-# ADSO2613934
+# adso2613934
 ---
 
-## TGO en Análisis y desarrollo de software
+## TGO en Análisis y Desarrollo de Software 
 
 **Lista de temas** publico
 
-|   Temas | Tipo |
+| Temas | Tipo |
 |---------|-------|
-| 1. PHP | C |
-| 2. POO | B |
-
-![PUCCA] (http://tinyurl.com/mutk4wkj)
+| 1.PHP | C |
+| 2.P00 | B |
+![superMario](http://tinyurl.com/3axsvx2x)
 
