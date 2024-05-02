@@ -18,7 +18,7 @@
 
 /*background-color: var(--color-first);*/
 body {
-    background-color: var(--color-first);
+    background-color: #5BBCFF;
     font-family: var(-ff-body);
     font-weight: 100;
     font-style: normal;
@@ -40,41 +40,129 @@ main.welcome {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-block: 2rem;
+        margin-block: 2.2rem;
+
     }
 
-    section.slider {
+    section.owl-carousel{
+        div.owl-item{
+            display: flex;
+            justify-content: center;
+            img{
+                height: 306px;
+                width: 306px;
+            }
+        }
+        div.owl-nav {
+            position: relative;
+            top: - 180px;
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                transition: transform 0.2s ease-in;
+
+                span{
+                    display: flex;
+                    height: 44px;
+                    width: 34px;
+                    text-indent: -9999px;
+
+
+                }
+                button:is(:hover) {
+                    background-color: transparent;
+                }
+              button.owl-prev{
+                span{
+                    background-color: url(../images/bnt-prev.png)no-repeat center;
+                }
+              }
+                button.owl-prew:hover {
+                    transform: scale(11) translatex(-4px);
+                }
+
+                button.owl-next{
+                    span{
+                        background: url(../images/bnt-next.png) no-repeat center;
+                    }
+                }
+            button.owl-next:hover{
+                transform: scale(1.1) translateX(-4px);
+            }
+            }
+
+            div.owl-dots{
+                position: relative;
+                top: -46px;
+                button {
+                    transition: transform 0.2s ease-in;
+                }
+                button:is(:hover){
+                    transform: scale(1.1);
+                }
+                button.owl-dot{
+                    span{
+                        background-color: var(--color-second);
+                        height:16px;
+                        width: 16px;;
+                    }
+                }
+                button.owl-dot.active,
+                button.owl-dot:is(hover){
+                    span {
+                        background-color: var(--color-third);
+                        height: 16px;
+                        width: 16px;
+
+                    }
+                }
+            }
+        }
+
+        .girl{
+            /* max-width: 100%;
+            height: auto; */
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-block: 0.4rem;
+            padding-right: 2rem;
+            max-width: 85%;
+            height: auto;
+            display: inline-block;
+            margin-left: 30px;
+            padding-right: 2.5rem;
+        }
+    }
+
+    footer {
         display: flex;
         justify-content: center;
         align-items: center;
 
+        a:is(:link, :visited) {
+            background: url(../images/bnt.png) no-repeat center;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.2rem;
+            transition: all 0.4s ease-in;
+            width: 300px;
+        }
+
+        a:is(:hover) {
+            background: url(../images/bnt-hover.png) no-repeat center;
+            transform: scale(1.02) translate(-5px);
+        }
+
+        a:is(:active) {
+            background: url(../images/bnt-active.png) no-repeat center;
+
+        }
     }
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    a:is(:link, :visited) {
-        background: url(../images/bnt.png) no-repeat center;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 7rem;
-        transition: all 0, 4s ease-in;
-        width: 300px;
-    }
-
-    a:is(:hover) {
-        background: url(../images/bnt-hover.png) no-repeat center;
-        transform: scale(1, 02) translate(-5px);
-    }
-
-    a:is(:active) {
-        background: url(../images/bnt-active.png) no-repeat center;
-    }
-}
 
 /* 01 - Welcome */
