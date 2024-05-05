@@ -31,9 +31,89 @@ body {
         background: url(../images/bg-main.png) no-repeat;
         height: 800px;
         overflow: hidden;
+        position: relative;
         width: 360px;
+
+        header {
+            position: relative;
+            z-index: 3;
+
+            svg.btn-burger {
+                cursor: pointer;
+                transition: transform 400ms;
+                user-select: none;
+                position: relative;
+            
+
+                .line {
+                    fill: none;
+                    transition: stroke-dasharray 400ms,
+                    stroke-dashoffset 400ms;
+                    stroke: var(--color-third);
+                    stroke-width: 4;
+                    stroke-linecap: round;
+                }
+
+                .top {
+                    stroke-dasharray: 40 121;
+                }
+
+                .bottom {
+                    stroke-dasharray: 40 121;
+                }
+            }
+
+            svg.btn-burger.active {
+                transform: rotate(45deg);
+
+                .top {
+                    stroke-dashoffset: -68px;
+                }
+
+                .bottom {
+                    stroke-dashoffset: -68px;
+                }
+            }
+        }
+        nav.nav {
+            background-color: #0009;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 800px;
+            padding-top: 10rem;
+            position: absolute;
+            top: 0;
+            transform: translateY(-60%) scale(0);
+            transition: transform 0.4s ease-in-out;
+            z-index: 2;
+            width: 400px;
+
+            img.title-menu {
+                margin-block: 2rem;
+            }
+        }
+       /*  nav.nav {
+            background-color: transparent;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100);
+            transition: transform 0.4s ease-out;
+            z-index: 2;
+            width: 400px;
+        } */
+        nav.nav.active {
+            opacity: 1;
+            transform: translate(0%);
+        }
     }
-}
+ }
 
 main.welcome {
     header {
@@ -44,71 +124,82 @@ main.welcome {
 
     }
 
-    section.owl-carousel{
-        div.owl-item{
+    section.owl-carousel {
+        div.owl-item {
             display: flex;
-            justify-content:center;
-            img{
+            justify-content: center;
+
+            img {
                 height: 240px;
                 width: 270px;
             }
         }
+
         div.owl-nav {
             position: relative;
             top: -180px;
             display: flex;
             justify-content: space-between;
 
-            button{
+            button {
                 transition: transform 0.2s ease-in;
 
-                span{
+                span {
                     display: flex;
                     height: 38px;
                     width: 36px;
                     text-indent: -9999px;
                 }
-                 }
-                button:is(:hover) {
-                    background-color: transparent;
-                }
-              button.owl-prev{
-                span{
+            }
+
+            button:is(:hover) {
+                background-color: transparent;
+            }
+
+            button.owl-prev {
+                span {
                     background: url(../images/bnt-prev.png) no-repeat center;
                 }
-              }
-                button.owl-prev:hover {
-                    transform: scale(1.1) translatex(-4px);
-                }
+            }
 
-                button.owl-next{
-                    span{
-                        background: url(../images/bnt-next.png) no-repeat center;
-                    }
+            button.owl-prev:hover {
+                transform: scale(1.1) translatex(-4px);
+            }
+
+            button.owl-next {
+                span {
+                    background: url(../images/bnt-next.png) no-repeat center;
                 }
-            button.owl-next:hover{
+            }
+
+            button.owl-next:hover {
                 transform: scale(1.1) translateX(-4px);
             }
-            
 
-            div.owl-dots{
+
+            div.owl-dots {
                 position: relative;
                 top: -46px;
+
                 button {
                     transition: transform 0.2s ease-in;
                 }
-                button:is(:hover){
+
+                button:is(:hover) {
                     transform: scale(1.1);
                 }
-                button.owl-dot{
-                    span{
+
+                button.owl-dot {
+                    span {
                         background-color: var(--color-second);
-                        height:16px;
-                        width: 16px;;
+                        height: 16px;
+                        width: 16px;
+                        ;
                     }
                 }
+
                 button.owl-dot.active,
-                button.owl-dot:is(hover){
+                button.owl-dot:is(hover) {
                     span {
                         background-color: var(--color-third);
                         height: 16px;
@@ -119,7 +210,7 @@ main.welcome {
             }
         }
 
-        .girl{
+        .girl {
             /* max-width: 100%;
             height: auto; */
             align-items: center;
@@ -163,5 +254,26 @@ main.welcome {
     }
 }
 
+/*-------------------------------------------------------*/
+/*Catalogue*/
+main.Catalogue {
+    scrollbar-width: none;
+    overflow: scroll;
+
+    header {
+        margin-top: 1.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a.btn-back:is(:link, :visited) {
+            transition: transform 0.4s ease-in;
+        }
+
+        a.btn-back:is(hover) {
+            transform: translateX(-4px);
+        }
+    }
+}
 
 /* 01 - Welcome */
