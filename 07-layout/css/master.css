@@ -35,20 +35,28 @@ body {
         width: 360px;
 
         header {
+            display: flex;
+            align-items: center;
             position: relative;
+            justify-content: space-between;
             z-index: 3;
+
+            img.logo-top {
+                margin-left: 3rem;
+
+            }
 
             svg.btn-burger {
                 cursor: pointer;
                 transition: transform 400ms;
                 user-select: none;
                 position: relative;
-            
+
 
                 .line {
                     fill: none;
                     transition: stroke-dasharray 400ms,
-                    stroke-dashoffset 400ms;
+                        stroke-dashoffset 400ms;
                     stroke: var(--color-third);
                     stroke-width: 4;
                     stroke-linecap: round;
@@ -75,27 +83,30 @@ body {
                 }
             }
         }
+
+        /*Menu Hamburguesa*/
+
         nav.nav {
             background-color: #0009;
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border-radius: 20px;
+            display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             height: 800px;
-            padding-top: 10rem;
+            padding-top: 15rem;
             position: absolute;
             top: 0;
-            transform: translateY(-60%) scale(0);
+            transform: translateY(-60%) scale(0%);
             transition: transform 0.4s ease-in-out;
             z-index: 2;
             width: 400px;
-
-            img.title-menu {
-                margin-block: 2rem;
-            }
         }
-       /*  nav.nav {
+
+
+
+        /*  nav.nav {
             background-color: transparent;
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
@@ -110,10 +121,50 @@ body {
         } */
         nav.nav.active {
             opacity: 1;
-            transform: translate(0%);
+            transform: translate(0%) scale(1);
         }
     }
- }
+
+    menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 60px;
+            width: 60px;
+        }
+
+        a:is(:link, :visited) {
+            background: url(../images/Btn-Inicio.png) no-repeat center;
+            color: var(--color-first);
+            font-family: var(--ff-body);
+            font-size: 20px;
+            height: 60px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 1.5rem;
+            padding-left: 5px;
+            margin-top: 1.2rem;
+            transition: all 0.2s ease-in;
+            text-decoration: none;
+            width: 300px;
+        }
+
+        a:is(:hover) {
+            background: url(../images/btn-hover.png) no-repeat center;
+            transform: scale(1.02) translateY(-4px);
+        }
+
+        a:is(:active) {
+            background: url(../images/btn-active.png) no-repeat center;
+        }
+    }
+}
+
+/* 01 WELCOME*/
 
 main.welcome {
     header {
@@ -255,7 +306,8 @@ main.welcome {
 }
 
 /*-------------------------------------------------------*/
-/*Catalogue*/
+/* 02 Catalogue*/
+
 main.Catalogue {
     scrollbar-width: none;
     overflow: scroll;
@@ -274,6 +326,121 @@ main.Catalogue {
             transform: translateX(-4px);
         }
     }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+
+    input {
+        border: none;
+        background:
+            url(../images/ico-filter.png) no-repeat 200px center,
+            url(../images/filter.png) no-repeat center;
+        background-size: auto, 250px;
+        width: 248px;
+        height: 45px;
+        outline: none;
+        text-indent: 16px;
+    }
+
+    article {
+        h2 {
+            display: flex;
+            justify-content: left;
+            padding-left: 1rem;
+            font-family: var(--ff-heading);
+            color: var(--color-third);
+            font-size: 23px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        figure {
+            figcaption {
+                color: var(--color-third);
+                font-size: 20px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        }
+
+        a:is(:link, :visited) {
+            background: url(../images/view.png) no-repeat center;
+            color: var(--color-fourth);
+            height: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            justify-content: center;
+            text-decoration: none;
+            width: 135px;
+        }
+    }
+
+
+
+    div.owl-carousel {
+        height: 210px;
+
+        div.owl-item {
+            display: flex;
+            justify-content: center;
+            margin-block: 1rem;
+
+            img.slide {
+                height: 100px;
+                width: 100px;
+                margin-left: 1rem;
+            }
+        }
+
+        div.owl-nav {
+            position: relative;
+            top: -170px;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                transition: 0.2s ease-in;
+
+                span {
+                    display: flex;
+                    height: 34px;
+                    width: 34px;
+                    text-indent: 12px;
+                    color: transparent;
+                }
+            }
+
+            button:is(:hover) {
+                background-color: transparent;
+            }
+
+            button.owl-prev {
+                span {
+                    background: url(../images/bnt-prev.png) no-repeat center / contain;
+                }
+            }
+
+            button.owl-prev:hover {
+                transform: scale(1) translateX(-4px)
+            }
+
+            button.owl-next {
+                span {
+                    background: url(../images/bnt-next.png) no-repeat center / contain;
+                }
+            }
+
+            button.owl-prev:hover {
+                transform: scale(1) translateX(4px)
+            }
+        }
+    }
 }
 
-/* 01 - Welcome */
+/* 03- view-game */

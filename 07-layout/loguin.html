@@ -1,0 +1,60 @@
+/* - - - - - - - - - - - - - - - - */
+/* L O G I N */
+/* - - - - - - - - - - - - - - - - */
+main.login {
+    header {
+        .btn-back {
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+    section {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            div.form-group {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                gap: 0.6rem;
+                flex-direction: column;
+                width: 300px;
+                label {
+                    display: flex;
+                    color: var(--color-third);
+                    font-family: var(--ff-heading);
+                    align-items: center;
+                    gap: 0.6rem;
+                    font-size: 20px;
+                }
+                input {
+                    border: none;
+                    background: url(../images/bg-input.png) no-repeat center;
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: var(--color-fourth);
+                    text-indent: 1rem;
+                    height: 60px;
+                    width: 300px;
+                    &::placeholder {
+                        color: var(--color-fourth);
+                        opacity: 0.6;
+                    }
+                }
+                img.ico-eye {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 54px;
+                    transition: all 0.2s ease-in;
+                    right: 10px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
