@@ -444,3 +444,106 @@ main.Catalogue {
 }
 
 /* 03- view-game */
+main.view-game {
+    div.column {
+        h4 {
+            background-color: red;
+        }
+    }
+}
+
+/* 04- Loguin */
+
+main.login{
+    header {
+        margin-block: 1.5rem;
+
+        .btn-back {
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    section {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+
+            div.form-group {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                gap: 0.6rem;
+                flex-direction: column;
+                width: 300px;
+                margin-block: 20px;
+
+                label {
+                    display: flex;
+                    color: var(--color-third);
+                    font-family: var(--ff-heading);
+                    align-items: center;
+                    gap: 0.6rem;
+                    font-size: 20px;
+                }
+
+                input {
+                    border: none;
+                    background: url(../images/bg-input.png) no-repeat center;
+                    outline: none;
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: var(--color-fourth);
+                    text-indent: 2rem;
+                    height: 60px;
+                    width: 300px;
+
+                    &::placeholder {
+                        color: var(--color-fourth);
+                        opacity: 0.6;
+                    }
+                }
+
+                img.ico-eye {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 52px;
+                    transition: all 0.2s ease-in;
+                    right: 25px;
+                    width: 40px;
+                    height: auto;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                button {
+                    height: 65px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    margin-top: 2rem;
+                    transition: all 0.2s ease-in;
+                    cursor: pointer;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background: none;
+                    
+                }
+                button:is(:hover) {
+                    background: url(../images/btn-hover.png) no-repeat center;
+                    transform: scale(1.02) translate(-5px);
+                }
+                a:is(:link, :visited) {
+                    color: var(--color-third);
+                    font-size: 16px;
+                    justify-content: center;
+                }
+            }
+
+        }
+    }
+}
