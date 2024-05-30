@@ -707,3 +707,83 @@ main.register {
     }
   }
 }
+
+/* - - - - - - - - - - - - - - - - - - - - */
+/* 01 - D A S H B O A R D*/
+/* - - - - - - - - - - - - - - - - - - - - */
+
+main.dashboard {
+  header {
+      .btn-back {
+          visibility: hidden;
+          pointer-events: none;
+          
+      }
+  }
+  section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+      article.module {
+          height: 120px;
+          width: 300px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          transition:background-color 0.4s ease-in;
+          flex-wrap: wrap;
+          border-radius: 20px;
+          aside {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              h2 {
+                  color: var(--color-first);
+                  font-family: var(--ff-heading);
+                  font-size: 20px;
+              }
+              span {
+                  color: var(--color-first);                    
+                  font-size: 14px;
+                  font-weight: 400;
+              }
+          }
+          aside:first-of-type {
+              padding-inline: 1rem;
+          }
+          a:is(:link, :visited) {
+              color: var(--color-fourth);
+              height: 30px;
+              display: flex;
+              align-items: center;
+              position: absolute;
+              bottom: 10px;
+              right: 0.1px;
+              font-size: 16px;
+              font-weight: 300;
+              justify-content: center;
+              gap: 0.6rem;
+              text-decoration: none;
+              transition: all 0.4s ease-in;
+              width: 120px;
+              img {
+                background-color: red;
+                  width: 70px;
+              }
+          }
+          a:is(:hover) {
+              background: url(../images/btn-view-hover.png) no-repeat center;
+              transform: scale(1.02) translateY(-4px);
+          }
+          a:is(:active) {
+              background: url(../images/btn-view-active.png) no-repeat center;
+          }
+      }
+      article.module:hover {
+          background: url(../images/bg-module-hover.png) no-repeat center;
+      }
+  }
+}

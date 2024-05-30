@@ -35,7 +35,7 @@
                     <img src="images/ico-register.svg" alt="Register">
                     Register
                 </a>
-                
+
             </menu>
         </nav>
         <section>
@@ -69,24 +69,19 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            // - - - - - - - - - - - - - - - 
             $('header').on('click', '.btn-burger', function () {
                 $(this).toggleClass('active')
                 $('.nav').toggleClass('active')
             })
-            // - - - - - - - - - - - - - - - 
+
             $togglePass = false
             $('section').on('click', '.ico-eye', function () {
-
                 !$togglePass ? $(this).next().attr('type', 'text')
                     : $(this).next().attr('type', 'password')
-
-                !$togglePass ? $(this).attr('src', 'images/ico-eye-close.svg')
-                    : $(this).attr('src', 'images/ico-eye.svg')
-
+                !$togglePass ? $(this).attr('src', 'images/ico-eye.svg')
+                    : $(this).attr('src', 'images/ico-eye-close.svg')
                 $togglePass = !$togglePass
             })
-            // - - - - - - - - - - - - - - - 
         })
     </script>
 

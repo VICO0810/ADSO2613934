@@ -41,38 +41,54 @@
             </menu>
         </nav>
         <section>
-            <div class="targets">
-                <img src="images/carazul.png" alt="">
-                <div class="view">
-                    <a href=" Outfits"></a>
-                </div>
-
-            </div>
-            <div class="targets">
-                <img src="images/carrosa.png" alt="">
-                <div class="view">
-                    <a href=" Accessories"></a>
-                </div>
-
-            </div>
-            <div class="targets">
-                <img src="images/caramarillo.png" alt="">
-                <div class="view">
-                    <a href="Stylist"></a>
-                </div>
-
-            </div>
+            <article class="module module-outfits">
+                <aside>
+                    <img src="images/carazul.png" alt="Users Module">
+                    <img src="images/Img-outfits.svg" >
+                </aside>
+                <aside>
+                    <img src="images/module-outfits.svg">
+                    <a class="view"  href="./myporfile.html"> <img src="images/btn-view.svg" alt="">                       
+                        
+                    </a>
+                </aside>
+            </article>
+            <article class="module module-accessories">
+                <aside>
+                    <img src="images/carrosa.png" alt="Users Module">
+                    <img src="images/Img-accessories.svg" >
+                </aside>
+                <aside>
+                    <img src="images/module-accessories.svg">
+                    <a class="view"  href="./song.html"> <img src="images/btn-view.svg" alt="">                       
+                        
+                    </a>
+                </aside>
+            </article>
+            <article class="module module-stylist">
+                <aside>
+                    <img src="images/caramarillo.png" alt="Users Module">
+                    <img src="images/Img-stylist.svg">
+                </aside>
+                <aside>
+                    <img src="images/module-stylist.svg">
+                    <a class="view"  href="/07-layout/users/users.html"> <img src="images/btn-view.svg" alt="">                       
+                        
+                    </a>
+                </aside>
+            </article>
         </section>
-
-    </main>
-    <script src="js/jquery-3.7.1.min.js"></script>
+    </main>    
+    <script src="js/jquery-3.7.1.min.js"></script>    
     <script>
-        $('header').on('click', '.btn-burger', function () {
+        $(document).ready(function () {
+            
+            $('header').on('click', '.btn-burger', function(){
             $(this).toggleClass('active')
             $('.nav').toggleClass('active')
+            })
+        //----------------------------       
         })
     </script>
-
 </body>
-
 </html>
