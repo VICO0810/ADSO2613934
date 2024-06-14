@@ -643,9 +643,10 @@ main.register {
           }
         }
 
-        #photo{
+        #photo {
           display: none;
         }
+
         .mask {
           mask-image: url(../images/shape-photo.svg);
           mask-repeat: no-repeat;
@@ -654,14 +655,15 @@ main.register {
           align-self: center;
           height: 208px;
           width: 208px;
-      }
-      .border {
-        position:absolute;
+        }
+
+        .border {
+          position: absolute;
           cursor: pointer;
           height: 208px;
           width: 208px;
           left: 15%;
-      }
+        }
 
         img.ico-eye {
           cursor: pointer;
@@ -714,76 +716,307 @@ main.register {
 
 main.dashboard {
   header {
-      .btn-back {
-          visibility: hidden;
-          pointer-events: none;
-          
-      }
+    .btn-back {
+      visibility: hidden;
+      pointer-events: none;
+
+    }
   }
+
   section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    article.module {
+      height: 120px;
+      width: 300px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 5rem;
-      article.module {
-          height: 120px;
-          width: 300px;
-          display: flex;
-          align-items: center;
-          position: relative;
-          transition:background-color 0.4s ease-in;
-          flex-wrap: wrap;
-          border-radius: 20px;
-          aside {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              h2 {
-                  color: var(--color-first);
-                  font-family: var(--ff-heading);
-                  font-size: 20px;
-              }
-              span {
-                  color: var(--color-first);                    
-                  font-size: 14px;
-                  font-weight: 400;
-              }
-          }
-          aside:first-of-type {
-              padding-inline: 1rem;
-          }
-          a:is(:link, :visited) {
-              color: var(--color-fourth);
-              height: 30px;
-              display: flex;
-              align-items: center;
-              position: absolute;
-              bottom: 10px;
-              right: 0.1px;
-              font-size: 16px;
-              font-weight: 300;
-              justify-content: center;
-              gap: 0.6rem;
-              text-decoration: none;
-              transition: all 0.4s ease-in;
-              width: 120px;
-              img {
-                background-color: red;
-                  width: 70px;
-              }
-          }
-          a:is(:hover) {
-              background: url(../images/btn-view-hover.png) no-repeat center;
-              transform: scale(1.02) translateY(-4px);
-          }
-          a:is(:active) {
-              background: url(../images/btn-view-active.png) no-repeat center;
-          }
+      position: relative;
+      transition: all 0.4s ease-in;
+      flex-wrap: wrap;
+      border-radius: 20px;
+
+      aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+          color: var(--color-first);
+          font-family: var(--ff-heading);
+          font-size: 20px;
+        }
+
+        span {
+          color: var(--color-first);
+          font-size: 14px;
+          font-weight: 400;
+        }
       }
-      article.module:hover {
-          background: url(../images/bg-module-hover.png) no-repeat center;
+
+      aside:first-of-type {
+        padding-inline: 1rem;
       }
+
+      a:is(:link, :visited) {
+        color: var(--color-fourth);
+        height: 30px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 10px;
+        right: 0.1px;
+        font-size: 16px;
+        font-weight: 300;
+        justify-content: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        transition: all 0.4s ease-in;
+        width: 120px;
+
+        img {
+          width: 70px;
+        }
+      }
+
+      a:is(:hover) {
+        background: url(../images/btn-view-hover.png) no-repeat center;
+        transform: scale(1.02) translateY(-4px);
+      }
+
+      a:is(:active) {
+        background: url(../images/btn-view-active.png) no-repeat center;
+      }
+    }
+
+    article.module:hover {
+      transform: scale(1.05);
+    }
+
+    article.module-outfits {
+      background: url(../images/carazul.png) no-repeat center;
+    }
+
+    article.module-accessories {
+      background: url(../images/carrosa.png) no-repeat center;
+    }
+
+    article.module-stylist {
+      background: url(../images/caramarillo.png) no-repeat center;
+    }
+  }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - */
+/* myoutfits*/
+/* - - - - - - - - - - - - - - - - - - - - */
+
+main.myoutfits {
+  header {
+    .btn-back {
+      visibility: hidden;
+      pointer-events: none;
+
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    article.module {
+      height: 120px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: all 0.4s ease-in;
+      flex-wrap: wrap;
+      border-radius: 20px;
+
+      aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+          color: var(--color-first);
+          font-family: var(--ff-heading);
+          font-size: 20px;
+        }
+
+        span {
+          color: var(--color-first);
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      aside:first-of-type {
+        padding-inline: 1rem;
+      }
+
+      a:is(:link, :visited) {
+        color: var(--color-fourth);
+        height: 30px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 10px;
+        right: 0.1px;
+        font-size: 16px;
+        font-weight: 300;
+        justify-content: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        transition: all 0.4s ease-in;
+        width: 120px;
+
+        img {
+          width: 70px;
+        }
+      }
+
+      a:is(:hover) {
+        background: url(../images/btn-view-hover.png) no-repeat center;
+        transform: scale(1.02) translateY(-4px);
+      }
+
+      a:is(:active) {
+        background: url(../images/btn-view-active.png) no-repeat center;
+      }
+    }
+
+    article.module:hover {
+      transform: scale(1.05);
+    }
+
+    article.module-oficina {
+      background: url(../images/carazul.png) no-repeat center;
+    }
+
+    article.module-universidad {
+      background: url(../images/carrosa.png) no-repeat center;
+    }
+
+    article.module-casual {
+      background: url(../images/caramarillo.png) no-repeat center;
+    }
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - */
+/* myaccessories*/
+/* - - - - - - - - - - - - - - - - - - - - */
+main.myoutfits {
+  header {
+    .btn-back {
+      visibility: hidden;
+      pointer-events: none;
+      font-size: small;
+
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    article.module {
+      height: 120px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: all 0.4s ease-in;
+      flex-wrap: wrap;
+      border-radius: 20px;
+
+      aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+          color: var(--color-first);
+          font-family: var(--ff-heading);
+          font-size: 20px;
+        }
+
+        span {
+          color: var(--color-first);
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      aside:first-of-type {
+        padding-inline: 1rem;
+      }
+
+      a:is(:link, :visited) {
+        color: var(--color-fourth);
+        height: 30px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 10px;
+        right: 0.1px;
+        font-size: 16px;
+        font-weight: 300;
+        justify-content: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        transition: all 0.4s ease-in;
+        width: 120px;
+
+        img {
+          width: 70px;
+        }
+      }
+
+      a:is(:hover) {
+        background: url(../images/btn-view-hover.png) no-repeat center;
+        transform: scale(1.02) translateY(-4px);
+      }
+
+      a:is(:active) {
+        background: url(../images/btn-view-active.png) no-repeat center;
+      }
+    }
+
+    article.module:hover {
+      transform: scale(1.05);
+    }
+
+    article.module-oficina {
+      background: url(../images/carazul.png) no-repeat center;
+    }
+
+    article.module-universidad {
+      background: url(../images/carrosa.png) no-repeat center;
+    }
+
+    article.module-casual {
+      background: url(../images/caramarillo.png) no-repeat center;
+    }
+    
+    article.module-labial {
+      background: url(../images/caramarillo.png) no-repeat center;
+    }
   }
 }
