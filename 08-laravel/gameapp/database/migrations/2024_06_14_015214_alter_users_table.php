@@ -14,7 +14,7 @@ return new class extends Migration
     {
         schema::table('users', function (Blueprint $table) {
             $table->renameColumn('name', 'fullname');
-            $table->string('gender')->before('birthdate');
+            $table->string('gender')->after('name');
             $table->string('role')->default('customer')->after('password');
         }); 
     }
