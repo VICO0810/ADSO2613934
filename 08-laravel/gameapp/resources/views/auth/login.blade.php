@@ -1,47 +1,76 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.app')
+@section('title','GameApp - Login')
+@section('class', 'login')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('content')
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <header>
+            <a href="javascript:;" class="btn-back">
+                <img src="images/btn-back.svg" alt="Back">
+            </a>
+            <img src="images/title-login.svg" alt="Login">
+            <svg class="btn-burger" viewBox="0 0 100 100" width="80">
+                <path
+                class="line top"
+                d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path 
+                class="line middle" 
+                d="m 70,50 h -40" />
+                <path 
+                class="line bottom"
+                    d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
+        </header>
+        {{--@include('layouts.menuburger')--}}
+        <section>
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label>
+                        <img src="images/ico-email.svg" alt="Email">
+                        Email:
+                    </label>
+                    <input type="email" name="email" value="{{ old ('email') }}" placeholder="johnwick@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <img src="images/ico-pass.svg" alt="Password">
+                        Password:
+                    </label>
+                    <img class="ico-eye" src="images/ico-eye.svg" alt="Eye">
+                    <input type="password" name="password" placeholder="dontmesswithmydog">
+                </div>
+                <div class="form-group">
+                    <button type="submit">
+                        <img src="images/content-btn-login.svg" alt="Login">
+                    </button>
+                    <a href="">Forgot your password ?</a>
+                </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            </form>
+        </section>
+        
+    @endsection
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('header').on('click', '.btn-burger', function () {
+                $(this).toggleClass('active')
+                $('.nav').toggleClass('active')
+            })
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            $togglePass = false
+            $('section').on('click', '.ico-eye', function () {
+                !$togglePass ? $(this).next().attr('type', 'text')
+                    : $(this).next().attr('type', 'password')
+                !$togglePass ? $(this).attr('src', 'images/ico-eye.svg')
+                    : $(this).attr('src', 'images/ico-eye-close.svg')
+                $togglePass = !$togglePass
+            })
+        })
+    </script>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+</body>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>
