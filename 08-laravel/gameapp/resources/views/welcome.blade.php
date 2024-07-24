@@ -3,38 +3,41 @@
 @section('class', 'welcome')
 
 @section('content')
-    <header>
-        <img src="{{asset('images/logo-welcome.png')}}" alt="Logo">
-    </header>
-    <section class="owl-carousel owl-theme">
-        <img src="{{asset('images/slide01.png')}}" alt="Slide01">
-        <img src="{{asset('images/slide-c2-01.png')}}" alt="Slide02">
-        <img src="{{asset('images/slide-c3-01.png')}}" alt="Slide03">
-    </section>
-    <footer>
-        <a href="{{url('catalogue')}}" class="Explore">ENTER</a>
-    </footer>
+<header>
+            <img src="images/logo-welcome.png" alt="logo">
+        </header>
+        <section class="owl-carousel owl-theme">
+            <img class="girl" src="images/slide01.png" alt="slide01">
+            <img class="girl" src="images/slide01.png" alt="slide01">
+            <img class="girl" src="images/slide01.png" alt="slide01">
+        </section>
+        
+        <footer>
+        
+        <a href="{{url('catalogue')}}" class="enter">
+        <img src="images/" alt="enter">
+    </a>
+</footer>
+
 @endsection
 
 @section('js')
-<script>
-    $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                //600:{
-                    //items:3
-               // },
-                //1000:{
-                    //items:5
-               // }
-            }
+<script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                }
+            })
         })
-    })
-</script>
+    </script>
 @endsection
