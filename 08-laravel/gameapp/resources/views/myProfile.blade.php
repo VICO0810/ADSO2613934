@@ -14,17 +14,17 @@
         <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
     </svg>
 </header>
-@include('menuburguer')
+@include('layouts.menuburguer')
 <section>
             <figure class="avatar" >
                 <img class="mask" src="images/image-game.png" alt="Photo">
                 <img class="border" src="images/border-photo.svg" alt="border">
             </figure>
-            <h2>Sacarias Flores</h2>
+            <h2>{{$user->fullname}}</h2>
             <span class="email"><b>sacarias@gmail.com</b></span>
             <span class="role">
                 <img src="images/ico-role.svg" alt="role">
-                <b>Administrador</b>
+                <b>{{$user->role}}</b>
             </span>
             <div class="grid">
                 <span class="data data-address">

@@ -9,13 +9,13 @@
         <section class="owl-carousel owl-theme">
             <img class="girl" src="images/slide01.png" alt="slide01">
             <img class="girl" src="images/slide01.png" alt="slide01">
-            <img class="girl" src="images/slide01.png" alt="slide01">
+            <img class="girl" src={{asset("images/slide01.png")}} alt="slide01">
         </section>
         
         <footer>
         
         <a href="{{url('catalogue')}}" class="enter">
-        <img src="images/" alt="enter">
+        <img src={{asset('images/content.btn-welcome.svg')}} alt="enter">
     </a>
 </footer>
 

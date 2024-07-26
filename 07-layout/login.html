@@ -72,7 +72,7 @@
             $('header').on('click', '.btn-burger', function () {
                 $(this).toggleClass('active')
                 $('.nav').toggleClass('active')
-            })
+            });
 
             $togglePass = false
             $('section').on('click', '.ico-eye', function () {
@@ -81,7 +81,7 @@
                 !$togglePass ? $(this).attr('src', 'images/ico-eye.svg')
                     : $(this).attr('src', 'images/ico-eye-close.svg')
                 $togglePass = !$togglePass
-            })
+            });
         })
     </script>
 

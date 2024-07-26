@@ -34,6 +34,12 @@ body {
     position: relative;
     width: 360px;
 
+    section.scroll {
+      scrollbar-width: none;
+      overflow-y: scroll;
+      height: 620px;
+    }
+
     header {
       display: flex;
       align-items: center;
@@ -309,135 +315,138 @@ main.welcome {
 /* 02 Catalogue*/
 
 main.Catalogue {
-  scrollbar-width: none;
-  overflow: scroll;
+  section.scroll {
+    scrollbar-width: none;
+    overflow: scroll;
+    height: 600px;
 
-  header {
-    margin-top: 1.4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    a.btn-back:is(:link, :visited) {
-      transition: transform 0.4s ease-in;
-    }
-
-    a.btn-back:is(hover) {
-      transform: translateX(-4px);
-    }
-  }
-
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-  }
-
-  input {
-    border: none;
-    background:
-      url(../images/ico-filter.png) no-repeat 200px center,
-      url(../images/filter.png) no-repeat center;
-    background-size: auto, 250px;
-    width: 248px;
-    height: 45px;
-    outline: none;
-    text-indent: 16px;
-  }
-
-  article {
-    h2 {
-      display: flex;
-      justify-content: left;
-      padding-left: 1rem;
-      font-family: var(--ff-heading);
-      color: var(--color-third);
-      font-size: 23px;
-      margin-bottom: 10px;
-      margin-top: 10px;
-    }
-
-    figure {
-      figcaption {
-        color: var(--color-third);
-        font-size: 20px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-    }
-
-    a:is(:link, :visited) {
-      background: url(../images/view.png) no-repeat center;
-      color: var(--color-fourth);
-      height: 30px;
-      display: flex;
-      align-items: center;
-      font-size: 16px;
-      justify-content: center;
-      text-decoration: none;
-      width: 135px;
-    }
-  }
-
-
-
-  div.owl-carousel {
-    height: 210px;
-
-    div.owl-item {
-      display: flex;
-      justify-content: center;
-      margin-block: 1rem;
-
-      img.slide {
-        height: 100px;
-        width: 100px;
-        margin-left: 1rem;
-      }
-    }
-
-    div.owl-nav {
-      position: relative;
-      top: -170px;
+    header {
+      margin-top: 1.4rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
-      button {
-        transition: 0.2s ease-in;
+      a.btn-back:is(:link, :visited) {
+        transition: transform 0.4s ease-in;
+      }
 
-        span {
-          display: flex;
-          height: 34px;
-          width: 34px;
-          text-indent: 12px;
-          color: transparent;
+      a.btn-back:is(hover) {
+        transform: translateX(-4px);
+      }
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+
+    input {
+      border: none;
+      background:
+        url(../images/ico-filter.png) no-repeat 200px center,
+        url(../images/filter.png) no-repeat center;
+      background-size: auto, 250px;
+      width: 248px;
+      height: 45px;
+      outline: none;
+      text-indent: 16px;
+    }
+
+    article {
+      h2 {
+        display: flex;
+        justify-content: left;
+        padding-left: 1rem;
+        font-family: var(--ff-heading);
+        color: var(--color-third);
+        font-size: 23px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+
+      figure {
+        figcaption {
+          color: var(--color-third);
+          font-size: 20px;
+          margin-top: 5px;
+          margin-bottom: 5px;
         }
       }
 
-      button:is(:hover) {
-        background-color: transparent;
+      a:is(:link, :visited) {
+        background: url(../images/view.png) no-repeat center;
+        color: var(--color-fourth);
+        height: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        justify-content: center;
+        text-decoration: none;
+        width: 135px;
       }
+    }
 
-      button.owl-prev {
-        span {
-          background: url(../images/bnt-prev.png) no-repeat center / contain;
+
+
+    div.owl-carousel {
+      height: 210px;
+
+      div.owl-item {
+        display: flex;
+        justify-content: center;
+        margin-block: 1rem;
+
+        img.slide {
+          height: 100px;
+          width: 100px;
+          margin-left: 1rem;
         }
       }
 
-      button.owl-prev:hover {
-        transform: scale(1) translateX(-4px)
-      }
+      div.owl-nav {
+        position: relative;
+        top: -170px;
+        display: flex;
+        justify-content: space-between;
 
-      button.owl-next {
-        span {
-          background: url(../images/bnt-next.png) no-repeat center / contain;
+        button {
+          transition: 0.2s ease-in;
+
+          span {
+            display: flex;
+            height: 34px;
+            width: 34px;
+            text-indent: 12px;
+            color: transparent;
+          }
         }
-      }
 
-      button.owl-prev:hover {
-        transform: scale(1) translateX(4px)
+        button:is(:hover) {
+          background-color: transparent;
+        }
+
+        button.owl-prev {
+          span {
+            background: url(../images/bnt-prev.png) no-repeat center / contain;
+          }
+        }
+
+        button.owl-prev:hover {
+          transform: scale(1) translateX(-4px)
+        }
+
+        button.owl-next {
+          span {
+            background: url(../images/bnt-next.png) no-repeat center / contain;
+          }
+        }
+
+        button.owl-prev:hover {
+          transform: scale(1) translateX(4px)
+        }
       }
     }
   }
@@ -1014,7 +1023,7 @@ main.myoutfits {
     article.module-casual {
       background: url(../images/caramarillo.png) no-repeat center;
     }
-    
+
     article.module-labial {
       background: url(../images/caramarillo.png) no-repeat center;
     }

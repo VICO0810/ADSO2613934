@@ -7,12 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/games/', function(){
+Route::get('/games', function(){
     $games = App\Models\Game::all();
     return view('listgames')->with('games', $games);
 });
 
-Route::get('catalogue', function(){
+Route::get('/catalogue', function(){
     return view('catalogue');
 });
 
@@ -25,29 +25,16 @@ Route::get('/game/show/{id}', function(){
     $game = App\Models\Game::find(request()->id);
     dd($game->toArray());
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/viewusers', function(){
-    $viewusers = App\Models\User::limit(20)->get();
-    $code = "<table style='border-collapse: collapse;margin-inline: auto;font-family: Arial'>
-                <tr>
-                    <th style='background: gray; color: white; padding: 0.4rem'>Id</th>
-                    <th style='background: gray; color: white; padding: 0.4rem'>Fullname</th>
-                    <th style='background: gray; color: white; padding: 0.4rem'>Age</th>
-                    <th style='background: gray; color: white; padding: 0.4rem'>Created At</th>
-                </tr>";
+Route::get('profile/show', [ProfileController::class, 'show'])->name('profile.show');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-foreach ($viewusers as $user){
-    $code .= "<tr>";
-    $code .= "<td style='border: 1px solid gray; padding: 0.4rem'>".$user->id."</td>";
-    $code .= "<td style='border: 1px solid gray; padding: 0.4rem'>".$user->fullname."</td>";
-    $code .= "<td style='border: 1px solid gray; padding: 0.4rem'>".Carbon\Carbon::parse($user->birthdate)->age."</td>";
-    $code .= "<td style='border: 1px solid gray; padding: 0.4rem'>".$user->created_at->diffForHumans()."</td>";
-}
-return $code . "</table>";
 });
 
 
