@@ -19,7 +19,7 @@
 /*background-color: var(--color-first);*/
 body {
   background-color: #5BBCFF;
-  font-family: var(-ff-body);
+  font-family: var(--ff-body);
   font-weight: 100;
   font-style: normal;
   display: flex;
@@ -1014,9 +1014,126 @@ main.myoutfits {
     article.module-casual {
       background: url(../images/caramarillo.png) no-repeat center;
     }
-    
+
     article.module-labial {
       background: url(../images/caramarillo.png) no-repeat center;
+    }
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - */
+/* 01 - M Y P R O F I L E*/
+/* - - - - - - - - - - - - - - - - - - - - */
+
+
+main.my-profile {
+  header {
+    .btn-back {
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    h1 {
+      color: var(--color-fourth);
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+
+    figure.avatar {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .border {
+        position: absolute;
+        top: -35px;
+      }
+
+      .mask {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+    }
+
+    h2 {
+      color: var(--color-first);
+      font-weight: bold;
+      font-family: var(--ff-heading);
+      font-size: 30px;
+    }
+
+    span {
+      color: var(--color-fourth);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.6rem;
+      padding-left: 0.6rem;
+      font-size: 16px;
+      width: 190px;
+    }
+
+    span.data-description {
+      background: url(../images/bg-description.png) no-repeat center;
+      height: 100;
+      width: 300;
+
+    }
+
+    span.role {
+      color: var(--color-first);
+      height: 60px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.6rem;
+      padding-left: 0.4rem;
+      font-size: 16px;
+      font-weight: 400;
+      width: 190px;
+    }
+
+    span.email {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-first);
+      font-weight: bold;
+      font-size: 18px;
+      height: 20px;
+
+    }
+
+    span.role {
+      background: url(../images/bg-administrador.svg) no-repeat center;
+      color: var(--color-first);
+    }
+
+    div.flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      span {
+        background: url(../images/bg-data-odd.svg) no-repeat center;
+      }
+
+      span:nth-child(-n+2),
+      span:nth-child(n+5) {
+        background: url(../images/bg-data-odd.svg) no-repeat center;
+      }
     }
   }
 }

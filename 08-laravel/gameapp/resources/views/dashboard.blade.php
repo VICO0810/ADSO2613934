@@ -21,8 +21,8 @@
         </aside>
         <aside>
             <img src="images/module-outfits.svg">
-            <a class="view" href="./myoutfits.html"> <img src="images/btn-view.svg" alt="">
-
+            <a class="view" href={{url('/outfits')}}>
+                <img src="images/btn-view.svg" alt="">
             </a>
         </aside>
     </article>

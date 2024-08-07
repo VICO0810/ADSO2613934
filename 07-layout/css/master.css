@@ -1029,3 +1029,109 @@ main.myoutfits {
     }
   }
 }
+
+/* - - - - - - - - - - - - - - - - - - - - */
+/* 01 - M Y P R O F I L E*/
+/* - - - - - - - - - - - - - - - - - - - - */
+
+
+main.my-profile {
+  header {
+      .btn-back {
+          visibility: visible;
+          pointer-events: all;
+      }
+      h1 {
+          color: var(--color-fourth);
+      }
+  }
+  section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      figure.avatar {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .border {
+              position: absolute;
+              top: -35px;
+          }
+          .mask {
+              mask-image: url(../images/shape-photo.svg);
+              mask-repeat: no-repeat;
+              mask-position: center top;
+              object-fit: cover;
+              align-self: center;
+              position: relative;
+              height: 300px;
+              width: 300px;
+          }
+
+      }
+      h2 {
+          color: var(--color-first);
+          font-weight: bold;
+          font-family: var(--ff-heading);
+          font-size: 30px;
+      }
+      span {
+          color: var(--color-fourth);            
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.6rem;
+          padding-left: 0.6rem;
+          font-size: 16px;
+          width: 190px;
+          }
+      span.data-description {
+          background: url(../images/bg-description.png) no-repeat center;
+          height: 100;
+          width: 300;
+
+      }
+      span.role {
+          color: var(--color-first);            
+          height: 60px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.6rem;
+          padding-left: 0.4rem;
+          font-size: 16px;
+          font-weight: 400;
+          width: 190px;
+      }
+      span.email {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--color-first);
+          font-weight: bold;
+          font-size: 18px;
+          height: 20px;
+          
+      }
+      span.role {
+          background: url(../images/bg-administrador.svg) no-repeat center;
+          color: var(--color-first);
+      }
+      div.grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+          span {
+              background: url(../images/bg-data-odd.svg) no-repeat center;
+          }
+          span:nth-child(-n+2),
+          span:nth-child(n+5) {
+              background: url(../images/bg-data-odd.svg) no-repeat center;
+          }
+      }
+  }
+}
